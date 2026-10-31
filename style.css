@@ -1,0 +1,131 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
+body {
+  font-family: "Inter", sans-serif;
+}
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+.dark .custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #334155;
+}
+
+&::-webkit-scrollbar {
+  display: none;
+}
+
+/* ================================
+   MEAL PLANNER CARDS
+================================ */
+
+/* Light mode */
+.meal-plan-item {
+  position: relative;
+  display: grid;
+  grid-template-columns: 24px minmax(0, 1fr);
+  align-items: start;
+  gap: 8px;
+
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+
+  padding: 12px 36px 12px 10px;
+
+  background: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  border-radius: 12px;
+
+  color: #14532d;
+}
+
+/* Food emoji */
+.meal-plan-emoji {
+  font-size: 19px;
+  line-height: 1.4;
+}
+
+/* Meal title */
+.meal-plan-title {
+  min-width: 0;
+
+  color: #14532d;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.5;
+
+  overflow-wrap: break-word;
+  word-break: normal;
+
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Remove button */
+.meal-plan-remove {
+  position: absolute;
+  top: 8px;
+  right: 7px;
+
+  width: 25px;
+  height: 25px;
+
+  display: grid;
+  place-items: center;
+
+  border: none;
+  border-radius: 7px;
+
+  background: transparent;
+  color: #64748b;
+
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.meal-plan-remove svg {
+  width: 15px;
+  height: 15px;
+}
+
+.meal-plan-remove:hover {
+  background: #fee2e2;
+  color: #be123c;
+}
+
+/* ================================
+   DARK MODE
+================================ */
+
+.dark .meal-plan-item {
+  background: #142b22;
+  border-color: #285a45;
+  color: #dcfce7;
+}
+
+.dark .meal-plan-title {
+  color: #dcfce7;
+}
+
+.dark .meal-plan-remove {
+  color: #94a3b8;
+}
+
+.dark .meal-plan-remove:hover {
+  background: #4c1d26;
+  color: #fda4af;
+}
+
+/* Prevent meal cards from expanding day columns */
+#view-planner [id^="day-"],
+#view-planner [id^="plan-"] {
+  min-width: 0;
+}
