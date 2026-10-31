@@ -1,27 +1,36 @@
 PantryPrep 
 Cook with what you have. PantryPrep is a lightweight kitchen-organizing app that helps you track ingredients, discover recipes that fit your available stock, plan meals for the week, and build a shopping list from the meals you choose.
+
 Overview
+
 PantryPrep brings four everyday kitchen tasks into one browser-based workspace:
+
 - Manage your kitchen inventory — add, edit, search, filter, and remove ingredients across your fridge, freezer, and pantry. Optionally record expiration dates and keep an eye on items that are expiring soon.
 - Find recipes from your ingredients — compare the ingredients in your inventory with a built-in catalogue of 25 recipes. Filter by diet and preparation time, then open a recipe for its ingredient list and cooking instructions.
 - Plan the week — assign recipes to any day from Monday to Sunday and remove meals as your plans change.
 - Prepare a shopping list — generate missing-ingredient items from your planned recipes, account for quantities where units can be compared, and add your own items. Check off or remove items as you shop.
 - Use batch-prep mode — turn an existing weekly plan into a simple five-step preparation checklist.
 - Choose your theme — switch between light and dark mode; the selected theme is remembered in the browser.
+
 Features
+
 Kitchen inventory
+
 - Organize ingredients by Fridge, Freezer, and Pantry.
 - Add, edit, and delete inventory entries.
 - Store a quantity and an optional expiration date for each item.
 - Search ingredients and filter by storage location.
 - View inventory summaries, including total stock, items expiring soon, cold storage, and pantry staples.
 - Load a preset sample pantry to try the app quickly.
+
 Recipe matcher
+
 - Browse 25 built-in recipes.
 - See whether recipe ingredients are available, missing, or in insufficient quantities.
 - Filter recipes by diet: Vegetarian, High-Protein, Gluten-Free, or Low-Carb.
 - Filter by maximum preparation time.
 - Open recipe details to review required ingredients and step-by-step instructions.
+
 PantryPrep normalizes common ingredient-name variations and compares supported quantities where possible. Supported conversions include grams/kilograms, milliliters/liters, teaspoons/tablespoons/cups, and common count-based units. When a quantity or unit cannot be safely compared, the app marks availability for review instead of assuming that the ingredient is available.
 Weekly meal planner and batch prep
 - Assign recipes to each day of the week.
@@ -56,7 +65,9 @@ Run locally
    python -m http.server 5500
 4. Open http://localhost:5500 in your browser.
 You can also open index.html directly or use the Live Server extension in Visual Studio Code. No npm install or build command is needed.
+
 Project structure
+
 PantryPrep/
 ├── index.html             # App layout and navigation
 ├── style.css              # Custom styles and scrollbar styling
@@ -73,8 +84,10 @@ PantryPrep/
     ├── batch-prep.js      # Batch-prep checklist
     ├── shopping-list.js   # Shopping-list generation and management
     └── app.js             # App initialization and global event handlers
+
 The JavaScript files are loaded in dependency order through script tags at the end of index.html. Keep that order in mind when adding or moving code between files.
 Data and privacy
+
 PantryPrep is currently a client-side application. It does not require an account and does not send pantry data to a PantryPrep server. Inventory, meal plans, shopping-list items, and the selected theme are stored in the current browser's localStorage under these keys:
 Data	localStorage key
 Kitchen inventory	pantry_inventory
